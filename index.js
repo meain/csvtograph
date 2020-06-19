@@ -38,11 +38,8 @@ function plotChart(kind) {
   }
   let urlkind = urlParams.get("kind");
   if (urlkind !== kind)
-    history.pushState(
-      null,
-      "csvtograph",
-      window.location.origin + "/csvtograph?url=" + url + "&kind=" + kind
-    );
+    window.location =
+      window.location.origin + "/csvtograph?url=" + url + "&kind=" + kind;
   d3.csv(url).then(d => makeChart(d, kind));
 }
 
