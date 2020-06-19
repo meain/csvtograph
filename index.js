@@ -26,7 +26,18 @@ function makeChart(input, kind) {
 // Request data using D3
 const urlParams = new URLSearchParams(window.location.search);
 function plotChart(kind) {
-  const url = urlParams.get("url");
+  let url = urlParams.get("url");
+  console.log("url:", url);
+  if (url === null) {
+    url = prompt(
+      "URL for data",
+      "https://gist.githubusercontent.com/meain/173aa49ef2758bbe397fa3fb8ed4937c/raw/3b87a3f697ffe6533e66c486f0e84004bf1c2f45/test.csv"
+    );
+    window.location = window.location.origin + "?url=" + url + "&kind=" + kind;
+  }
+  let urlkind = urlParams.get("kind");
+  if (urlkind !== kind)
+    history.pushState(null, "csvtograph", window.location.origin + "?url=" + url + "&kind=" + kind)
   d3.csv(url).then(d => makeChart(d, kind));
 }
 
