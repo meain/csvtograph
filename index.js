@@ -41,7 +41,7 @@ function plotChart(kind) {
     history.pushState(
       null,
       "csvtograph",
-      window.location.origin + "?url=" + url + "&kind=" + kind
+      window.location.origin + "/csvtograph?url=" + url + "&kind=" + kind
     );
   d3.csv(url).then(d => makeChart(d, kind));
 }
