@@ -28,7 +28,7 @@ const urlParams = new URLSearchParams(window.location.search);
 function plotChart(kind) {
   let url = urlParams.get("url");
   console.log("url:", url);
-  if (url === null) {
+  if (url == null) {
     url = prompt(
       "URL for data",
       "https://gist.githubusercontent.com/meain/173aa49ef2758bbe397fa3fb8ed4937c/raw/3b87a3f697ffe6533e66c486f0e84004bf1c2f45/test.csv"
