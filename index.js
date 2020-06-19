@@ -34,6 +34,7 @@ function plotChart(kind) {
       "URL for data",
       "https://gist.githubusercontent.com/meain/173aa49ef2758bbe397fa3fb8ed4937c/raw/3b87a3f697ffe6533e66c486f0e84004bf1c2f45/test.csv"
     );
+    if (!url.startsWith("http")) url = "https://" + url;
     window.location =
       window.location.origin + "/csvtograph?url=" + url + "&kind=" + kind;
   }
