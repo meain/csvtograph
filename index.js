@@ -5,6 +5,7 @@ let currentChartType = "bar";
 
 var ctx = document.getElementById("chart").getContext("2d");
 function makeChart(input, kind) {
+  console.log(input);
   let labels = input.map(d => d[Object.keys(d)[0]]);
   let data = input.map(d => parseFloat(d[Object.keys(d)[1]]));
   let llabel = Object.keys(input[0])[1];
