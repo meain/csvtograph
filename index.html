@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>csvtochart</title>
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .chart-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+    <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+    <!-- <link rel="stylesheet" href="index.css" type="text/css" /> -->
+  </head>
+  <body>
+    <div
+      class="chart-container"
+      style="position: relative; height:100%; width:100%"
+    >
+      <canvas id="chart"></canvas>
+    </div>
+    <div id="buttons"></div>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
